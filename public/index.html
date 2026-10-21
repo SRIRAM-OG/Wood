@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sathish's Veni Beddings — Wooden Profiles Collection</title>
+  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <meta name="description" content="Architectural wooden mouldings, frame corners and workshop details. 98 pieces in the collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#top" class="logo"><img src="/logo.svg" alt="" width="40" height="40"><span class="logo-text">Sathish's <b>Veni Beddings</b></span></a>
+    <nav>
+      <a href="#collection">The collection</a>
+      <a href="tel:+917981060454" class="phone-link" aria-label="Call 7981060454">📞 <span>7981060454</span></a>
+      <button class="cart-btn" id="cart-open" aria-label="Open cart">🛒 Cart <span id="cart-count" class="badge">0</span></button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Architectural Details · Wooden Profiles</p>
+        <h1>The beauty is<br>in the <em>detail.</em></h1>
+        <p class="lead">Carefully shaped mouldings, frame corners and profiles that bring a room together. Drag the ring to turn it, or open any piece for a closer look.</p>
+        <a href="#collection" class="btn">Explore the collection</a>
+      </div>
+      <div class="stage" id="stage" aria-label="Featured pieces, drag to rotate">
+        <div class="ring" id="ring"></div>
+        <div class="floor"></div>
+      </div>
+    </section>
+
+    <section class="spotlight reveal">
+      <div class="spotlight-card tilt" id="spotlight">
+        <img src="/images/profile-008.jpeg" alt="Selected detail: pine cornice profile" loading="lazy">
+        <div class="spotlight-caption">
+          <p class="eyebrow">Selected Detail 008</p>
+          <h2>A thoughtful finish changes a space.</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection" id="collection">
+      <div class="section-head reveal">
+        <p class="eyebrow">01 — Discover the collection</p>
+        <h2>Made to be noticed</h2>
+        <p class="lead">A closer look at each profile, corner and finish.</p>
+      </div>
+      <div class="toolbar reveal">
+        <div class="filters" id="filters" role="tablist"></div>
+        <input type="search" id="search" placeholder="Search by code, e.g. 042" aria-label="Search pieces">
+      </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </section>
+
+    <section class="contact reveal" id="contact">
+      <div class="section-head">
+        <p class="eyebrow">02 — Order</p>
+        <h2>Like what you see?</h2>
+        <p class="lead">Add profiles to your cart, then send the list to us on WhatsApp in one tap, or call us directly.</p>
+      </div>
+      <div class="contact-card">
+        <p class="eyebrow">Call or WhatsApp</p>
+        <a class="big-phone" href="tel:+917981060454">+91 79810 60454</a>
+        <div class="contact-actions">
+          <a class="btn" href="tel:+917981060454">📞 Call us</a>
+          <button class="btn btn-wa" type="button" data-open-cart>🛒 View cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="#top" class="logo"><img src="/logo.svg" alt="" width="40" height="40"><span class="logo-text">Sathish's <b>Veni Beddings</b></span></a>
+    <p>A closer look at the details that finish a space.</p>
+    <p><a href="tel:+917981060454">📞 +91 79810 60454</a></p>
+    <p class="muted" id="footer-count"></p>
+  </footer>
+
+  <dialog id="viewer" class="viewer">
+    <div class="viewer-card">
+      <button class="icon-btn close" data-act="close" aria-label="Close">×</button>
+      <button class="icon-btn prev" data-act="prev" aria-label="Previous">‹</button>
+      <img id="viewer-img" alt="">
+      <button class="icon-btn next" data-act="next" aria-label="Next">›</button>
+      <div class="viewer-meta">
+        <div><p class="eyebrow" id="viewer-cat"></p><h3 id="viewer-name"></h3></div>
+        <button class="btn" id="viewer-add">Add to cart</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="cart" class="cart-drawer" aria-labelledby="cart-title">
+    <div class="cart-head">
+      <h2 id="cart-title">Your cart</h2>
+      <button class="icon-btn" data-close-cart aria-label="Close cart">×</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <form id="order-form" class="order-form">
+      <label>Your name <input name="name" required maxlength="100" autocomplete="name"></label>
+      <label>Your mobile number <input name="phone" required type="tel" inputmode="tel" pattern="[+\d][\d\s\-]{6,18}" autocomplete="tel" placeholder="98xxxxxxxx"></label>
+      <label>Note (optional) <textarea name="note" rows="2" maxlength="500" placeholder="Sizes, wood type, delivery place…"></textarea></label>
+      <button class="btn btn-wa" type="submit">WhatsApp directly</button>
+      <a class="btn btn-ghost" href="tel:+917981060454">📞 Call 7981060454</a>
+      <p class="form-status" id="form-status" role="status"></p>
+    </form>
+  </dialog>
+
+  <script src="/order.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

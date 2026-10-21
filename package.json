@@ -1,0 +1,17 @@
+{
+  "name": "woodwork-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wooden profiles catalog: 98 pieces, Node backend, 3D frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
