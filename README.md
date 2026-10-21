@@ -1,0 +1,40 @@
+# Sathish's Veni Beddings — catalog
+
+Catalog of 98 wooden profiles, frame corners and workshop photos, modelled on
+https://sathish-veni-beddings.lovable.app/ with a 3D UI.
+
+## Run
+
+```
+npm start          # http://localhost:3000
+npm test
+```
+
+Needs Node 18 or newer. There are no npm dependencies.
+
+## Layout
+
+- `server.js`: static file server and JSON API
+- `public/`: frontend (`index.html`, `styles.css`, `app.js`) and `images/profile-000.jpeg` … `profile-097.jpeg`
+- `data/products.json`: the catalog. Edit a product's `category` or `name` here. The `original` field keeps each image's original WhatsApp filename.
+- `data/enquiries.json`: enquiries from the site. The file is created on the first enquiry.
+
+## API
+
+| Method | Path | Notes |
+|---|---|---|
+| GET | `/api/categories` | Category list with counts |
+| GET | `/api/products?category=corners&q=042` | Both params are optional |
+| GET | `/api/products/:code` | One product, for example `/api/products/008` |
+| POST | `/api/enquiries` | `{ name, phone, message, products: [{ code: "003", qty: 2 }] }`. The cart saves orders here when "WhatsApp directly" is pressed |
+| GET | `/api/enquiries` | Admin only. Read them in the browser at `/admin.html`. Start the server with `ADMIN_KEY=secret` and send header `x-admin-key: secret` |
+
+## 3D UI
+
+- Hero ring carousel of featured pieces. Drag it to spin.
+- Cards and the spotlight tilt under the pointer, with a light glare.
+- Sections and cards rotate into view as you scroll.
+- The image viewer opens with a 3D flip. Use the arrow keys to move between pieces.
+- Buttons have a pressable 3D depth.
+- All motion turns off when the system's reduced-motion setting is on.
+"# Wood" 
